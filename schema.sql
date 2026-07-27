@@ -1,3 +1,0 @@
--- SQLite schema used by router.php (included for reuse with another PHP backend).
-CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, email TEXT NOT NULL UNIQUE, password_hash TEXT NOT NULL, created_at TEXT DEFAULT CURRENT_TIMESTAMP);
-CREATE TABLE calculations (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, loan_name TEXT NOT NULL, principal REAL NOT NULL, annual_rate REAL NOT NULL, tenure_months INTEGER NOT NULL, emi REAL NOT NULL, total_interest REAL NOT NULL, total_payment REAL NOT NULL, created_at TEXT DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY(user_id) REFERENCES users(id));
