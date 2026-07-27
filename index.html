@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simple Indian loan EMI calculator with saved plans.">
+  <title>Loan EMI Calculator</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <nav>
+      <a class="brand" href="#" id="brandLink">Loan EMI <span>Calculator</span></a>
+      <div id="nav-actions"><button class="link" id="loginButton">Log in</button><button class="pill" id="signupButton">Create account</button></div>
+    </nav>
+    <section id="landing" class="hero">
+      <div><p class="eyebrow">SMART LOAN PLANNING</p><h1>Know your EMI.<br><em>Own your future.</em></h1><p class="intro">Calculate your monthly instalment, save plans on this device, and revisit them whenever you need.</p><button class="pill large" id="landingCta">Calculate your EMI <span>&rarr;</span></button></div>
+      <div class="hero-art"><div class="orbit o1"></div><div class="orbit o2"></div><div class="card-mini"><small>MONTHLY PAYMENT</small><strong>Know your<br>monthly payment</strong><div class="spark">⌁⌁⌁⌁⌁⌁⌁</div></div><div class="coin">₹</div></div>
+    </section>
+    <div id="appView" class="hidden">
+      <section id="calculator" class="calc-wrap">
+        <div class="form-panel"><p class="eyebrow">LOAN CALCULATOR</p><h2>Build your repayment plan</h2>
+          <label>Loan amount <output id="amountOut">₹25,00,000</output></label><input id="amount" type="range" min="100000" max="10000000" step="50000" value="2500000"><div class="range-ends"><span>₹1 lakh</span><span>₹1 crore</span></div>
+          <label>Interest rate <output id="rateOut">8.5%</output></label><input id="rate" type="range" min="1" max="25" step="0.1" value="8.5"><div class="range-ends"><span>1%</span><span>25%</span></div>
+          <label>Loan tenure <output id="tenureOut">10 years</output></label><input id="tenure" type="range" min="1" max="30" value="10"><div class="range-ends"><span>1 year</span><span>30 years</span></div>
+          <div class="save-row"><input id="loanName" maxlength="60" placeholder="Name this plan (optional)"><button class="pill" id="saveBtn">Save plan</button></div>
+        </div>
+        <div class="result-panel"><p class="eyebrow">YOUR ESTIMATE</p><p class="result-label">Monthly EMI</p><div class="emi" id="emi">₹0</div><p class="result-note">for <span id="months">120</span> monthly payments</p><div class="breakdown"><div><span>Principal amount</span><b id="principal">₹0</b></div><div><span>Total interest</span><b id="interest">₹0</b></div><div><span>Total payment</span><b id="total">₹0</b></div></div><div class="bar"><i id="principalBar"></i></div><div class="legend"><span><i></i> Principal</span><span><i></i> Interest</span></div></div>
+      </section>
+      <section id="historyView" class="history hidden"><div><p class="eyebrow">SAVED PLANS</p><h2>Your calculation history</h2></div><div id="historyList" class="history-list"></div></section>
+    </div>
+  </main>
+  <div id="modal" class="modal hidden"><div class="modal-box"><button class="close" id="closeModal" aria-label="Close">×</button><p class="eyebrow" id="modalLabel">WELCOME</p><h2 id="modalTitle">Continue to Loan EMI Calculator</h2><form id="authForm"><div id="nameGroup" class="hidden"><label>Your name<input id="authName" autocomplete="name" placeholder="Aarav Sharma"></label></div><label>Email address<input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required></label><label>Password<input id="authPassword" type="password" autocomplete="current-password" placeholder="At least 6 characters" required></label><button class="pill full" type="submit">Continue</button></form><p id="switchText"></p><p id="authError" class="error"></p></div></div>
+  <script src="./app.js"></script>
+</body>
+</html>
